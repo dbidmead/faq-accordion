@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    --header-color: hsl(238, 29%, 16%);
+    --q-txt-color: hsl(237, 12%, 33%);
+    --a-txt-color: hsl(240, 6%, 50%);
+    --hover-txt-color: hsl(14, 88%, 65%);
+    --hr-color: hsl(240, 5%, 91%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 14px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-gradient);
+}
+
+.card-wrapper {
+    /* this is so that the box image can overflow since the actual card's overflow is set to hidden */
+    width: 920px;
+    height: 510px;
+    border-radius: 25px;
+    position: relative;
+    background-color: white;
+}
+
+.card {
+    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+
+.woman-container {
+    height: 100%;
+    width: 390px;
+    display: flex;
+    align-items: center;
+
+    /* lots of trial and error to line this up, but now you know how to manipulate CSS background-images */
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-origin: border-box;
+    background-position: 100% 67%;
+    background-repeat: no-repeat;
+    background-size: 250%;
+}
+
+#woman {
+    height: 360px;
+    width: auto;
+    transform: translateX(-83px);
+    z-index: 3;
+}
+
+#cube {
+    position: absolute;
+    z-index: 4;
+    left: -90px;
+    top: 41%;
+}
+
+.txt-container {
+    width: 460px;
+    /* background-color: aqua; */
+    padding: 70px 80px;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 32px;
+    color: var(--header-color);
+}
+
+.question {
+    line-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--q-txt-color);
+}
+
+.active {
+    /* this class will be added to the clicked question with JS */
+    color: var(--header-color);
+    font-weight: 700;
+}
+
+.question img {
+    height: 0.5em;
+    margin-right: 1em;
+}
+
+.active img {
+    transform: rotate(180deg);
+}
+
+.question:hover {
+    cursor: pointer;
+    color: var(--hover-txt-color);
+}
+
+.answer {
+    display: none;
+    color: var(--a-txt-color);
+    font-size: 12px;
+    margin-bottom: 1.5em;
+}
+
+hr {
+    border: 1px solid var(--hr-color);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    width: 100vw;
+    position: absolute;
+    bottom: 10px; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
