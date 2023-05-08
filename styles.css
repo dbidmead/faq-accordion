@@ -86,11 +86,16 @@ h1 {
 }
 
 .question {
-    line-height: 3em;
+    line-height: 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--q-txt-color);
+}
+
+.question span {
+    /* this means clicking on span will trigger the parent div to eliminate javascript complications */
+    pointer-events: none;
 }
 
 .active {
@@ -102,10 +107,11 @@ h1 {
 .question img {
     height: 0.5em;
     margin-right: 1em;
+    transition: all 0.4s ease;
 }
 
 .active img {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
 }
 
 .question:hover {
@@ -114,14 +120,18 @@ h1 {
 }
 
 .answer {
-    display: none;
+    /* in order to transition the height of the answer, you must use max-height because display is not animatable. height alone does not work because css needs an actual value to translate, so just set max-height in the JS file to something bigger than your answer will ever get */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
     color: var(--a-txt-color);
     font-size: 12px;
-    margin-bottom: 1.5em;
 }
 
 hr {
     border: 1px solid var(--hr-color);
+    margin: 1.3rem 0;
 }
 
 .attribution { 
@@ -130,8 +140,10 @@ hr {
     width: 100vw;
     position: absolute;
     bottom: 10px; 
+    color: white;
 }
 
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: var(--hover-txt-color); 
+    font-weight: 700;
 }
