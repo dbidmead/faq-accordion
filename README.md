@@ -64,7 +64,7 @@ This initially hides the contents of the dropdown.
 
 ```js
 const dropdown = document.querySelector('.dropdown');
-dropdown.setAttribute('style', 'max-height:0; opacity:0;')
+dropdown.setAttribute('style', 'max-height:99999px; opacity:1;')
 ```
 This alters the CSS of the dropdown in manner compatible with CSS animation.
 
