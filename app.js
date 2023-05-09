@@ -12,12 +12,10 @@ function toggle(question) {
     let answer = question.parentElement.lastElementChild;
     if(!question.classList.contains('active')) {
         question.classList.add('active');
-        answer.classList.add('visible');
         answer.setAttribute('style', 'max-height:300px; opacity:1; margin-top:1.3em;');
         answerVisible = true;
     } else if(question.classList.contains('active')) {
         question.classList.remove('active');
-        answer.classList.remove('visible');
         answer.setAttribute('style', 'max-height:0; opacity:0; margin-top:0;');
         answerVisible = false;
     };
@@ -28,11 +26,10 @@ questions.forEach((question) => {
         let clickedQuestion = e.target;
 
         if(answerVisible) {
-            let activeQuestionArr = questions.filter(question => !!question.classList.contains('active'));
-            let activeQuestion = activeQuestionArr[0];
+            let activeQuestion = questions.filter(question => !!question.classList.contains('active'))[0];
             if(activeQuestion != clickedQuestion) {
                 toggle(activeQuestion);
-                // don't return so that the clicked question will subsequently be toggled
+                // don't return so that the clicked question will subsequently be toggled since answerVisible will now be false
             } else {
                 toggle(clickedQuestion);
                 return;

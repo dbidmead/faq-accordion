@@ -21,6 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--bg-gradient);
+    overflow: hidden;
 }
 
 .card-wrapper {
@@ -146,4 +147,70 @@ hr {
 .attribution a { 
     color: var(--hover-txt-color); 
     font-weight: 700;
+}
+
+@media (max-width: 940px) {
+    .card-wrapper {
+        width: 330px;
+        height: 550px;
+        align-self: center;
+        transform: translateY(2%);
+    }
+
+    .card {
+        flex-direction: column;
+        overflow: visible;
+        
+    }
+    
+    .woman-container {
+        position: fixed;
+        height: 235px;
+        width: 100%;
+        flex-direction: column;
+    
+        background-image: url('./images/bg-pattern-mobile.svg');
+        background-position: 45px 0%;
+        background-size: 75%;
+    }
+    
+    #woman {
+        height: auto;
+        width: 235px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -60%);
+    }
+    
+    #cube {
+        left: -2%;
+        top: -15.5%;
+        transform: scale(50%);
+    }
+    
+    .txt-container {
+        width: 280px;
+        padding: 140px 25px 45px 25px;
+        z-index: 10;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    .question {
+        font-size: 13px;
+    }
+    
+    .question img {
+        margin-right: 0.3em;
+    }
+    
+    .answer {
+        font-size: 11px;
+    }
+    
+    .attribution { 
+        display: none;
+    }
 }
