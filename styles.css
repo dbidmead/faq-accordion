@@ -107,6 +107,7 @@ h1 {
     height: 0.5em;
     margin-right: 1em;
     transition: all 0.4s ease;
+    pointer-events: none;
 }
 
 .active img {
